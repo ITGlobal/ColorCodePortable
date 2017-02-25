@@ -10,21 +10,26 @@ namespace ColorCode.Stubs
 
         public override Encoding Encoding
         {
-            get { throw new System.NotImplementedException(); }
+            get { return Encoding.ASCII; }
         }
 
         public override void Write(string value)
         {
             Write__buffer += value;
 
-            base.Write(value);
+      //      base.Write(value);
         }
 
         public override void WriteLine(string value)
         {
             Write__buffer += value + Environment.NewLine;
 
-            base.WriteLine(value);
+       //     base.WriteLine(value);
+        }
+
+        public override void Write(char value)
+        {
+            Write__buffer += value;
         }
     }
 }

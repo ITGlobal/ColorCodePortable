@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0-*",
+  "dependencies": {
+    "ColorCode.Netstandard": "*",
+    "xunit": "2.2.0",
+    "dotnet-test-xunit": "1.0.0-rc2-192208-24"
+  },
+  "testRunner": "xunit",
+  "frameworks": {
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "version": "1.0",
+          "type": "platform"
+        }
+      },
+      "imports": [
+        "dotnet5.4",
+        "portable-net451+win8"
+      ]
+    }
+  }
+}

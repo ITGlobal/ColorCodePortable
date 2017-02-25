@@ -1,24 +1,26 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using ColorCode.Common;
 using Xunit.Extensions;
+using Xunit.Sdk;
 
 namespace ColorCode
 {
-    public class ColorizeData : DataAttribute
+    public class ColorizeDataAttribute : DataAttribute
     {
         readonly Regex sourceFileRegex = new Regex(@"(?i)[a-z]+\.source\.([a-z0-9]+)", RegexOptions.Compiled);
-
-        public override IEnumerable<object[]> GetData(MethodInfo methodUnderTest, Type[] parameterTypes)
+        
+        public override IEnumerable<object[]> GetData(MethodInfo testMethod)
         {
             List<object[]> colorizeData = new List<object[]>();
 
-            string appPath = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
+            string appPath = Path.GetDirectoryName(new Uri(AssemblyShim.GetExecutingAssembly().CodeBase).LocalPath);
             
-            string[] dirNames = Directory.GetDirectories(Path.Combine(appPath, @"..\..\Data"));
+            string[] dirNames = Directory.GetDirectories(Path.Combine(appPath, @"Data"));
 
             foreach(string dirName in dirNames)
             {

@@ -1,0 +1,40 @@
+{
+    "version": "1.0.4",
+    "title": "ColorCode (.NET Core)",
+    "copyright": "© 2016, All Rights Reserved",
+    "description": "ColorCode is a library for colorizing source code (also known as syntax highlighting).  ColorCode Portable is a fork of the original ColorCode code base to .NET Portable Class Libraries.",
+    "packOptions": {
+        "iconUrl": "https://cdn.rawgit.com/RichardSlater/ColorCodePortable/c7e4e62aeafa6fcb124bc4d883c95b02a3ee1792/ColorCode/Assets/icon.png",
+        "licenseUrl": "https://opensource.org/licenses/MS-PL",
+        "releaseNotes": "Initial port of ColorCode to .NET Core",
+        "repository": {
+            "type": "git",
+            "url": "https://github.com/ITGlobal/ColorCodePortable.git"
+        },
+        "requireLicenseAcceptance": true,
+        "owners": [
+            "Bashir Souid",
+            "Richard Slater",
+            "IT Global LLC"
+        ],
+        "summary": "",
+        "tags": [
+            "ColorCode",
+            "Syntax",
+            "SyntaxHighlighting",
+            "Colorizing"
+        ]
+    },
+    "buildOptions": {
+        "xmlDoc": true
+    },
+    "dependencies": {},
+    "frameworks": {
+        "netstandard1.6": {
+            "dependencies": {
+                "NETStandard.Library": "1.6.0"
+            }
+        },
+        "net45":{}
+    }
+}

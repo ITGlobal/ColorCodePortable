@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using ColorCode.Common;
 using ColorCode.Parsing;
 using ColorCode.Stubs;
@@ -25,7 +24,7 @@ namespace ColorCode.Formatting
 
                 formatter.WriteHeader(stubStyleSheet, new StubLanguage(), stubTextWriter);
 
-                Assert.Equal("<div style=\"color:Black;background-color:White;\"><pre>", stubTextWriter.Write__buffer);
+                Assert.Equal("<div style=\"color:Black;background-color:White;\"><pre>", stubTextWriter.Write__buffer.Trim());
             }
 
             [Fact]
@@ -37,7 +36,7 @@ namespace ColorCode.Formatting
 
                 formatter.WriteHeader(stubStyleSheet, new StubLanguage(), stubTextWriter);
 
-                Assert.Equal("<div><pre>", stubTextWriter.Write__buffer);
+                Assert.Equal("<div><pre>", stubTextWriter.Write__buffer.Trim());
             }
 
             [Fact]
@@ -49,7 +48,7 @@ namespace ColorCode.Formatting
 
                 formatter.WriteHeader(stubStyleSheet, new StubLanguage(), stubTextWriter);
 
-                Assert.Equal("<div style=\"color:Black;\"><pre>", stubTextWriter.Write__buffer);
+                Assert.Equal("<div style=\"color:Black;\"><pre>", stubTextWriter.Write__buffer.Trim());
             }
 
             [Fact]
@@ -61,7 +60,7 @@ namespace ColorCode.Formatting
 
                 formatter.WriteHeader(stubStyleSheet, new StubLanguage(), stubTextWriter);
 
-                Assert.Equal("<div style=\"background-color:White;\"><pre>", stubTextWriter.Write__buffer);
+                Assert.Equal("<div style=\"background-color:White;\"><pre>", stubTextWriter.Write__buffer.Trim());
             }
 
             [Fact]
@@ -228,7 +227,7 @@ namespace ColorCode.Formatting
 
                 formatter.WriteFooter(stubStyleSheet, new StubLanguage(), stubTextWriter);
 
-                Assert.Equal("</pre></div>", stubTextWriter.Write__buffer);
+                Assert.Equal("</pre></div>", stubTextWriter.Write__buffer.Trim());
             }
 
             [Fact]

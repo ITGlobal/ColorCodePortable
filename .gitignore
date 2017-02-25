@@ -48,3 +48,8 @@ bld/
 [Ll]og/
 ColorCode.sln.cache
 *.nupkg
+
+# Build output
+artifacts
+.vs
+**/project.lock.json
