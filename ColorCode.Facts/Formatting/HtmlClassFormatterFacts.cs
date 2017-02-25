@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using ColorCode.Common;
 using ColorCode.Parsing;
 using ColorCode.Stubs;
@@ -24,7 +23,7 @@ namespace ColorCode.Formatting
 
                 formatter.WriteHeader(stubStyleSheet, language, stubTextWriter);
 
-                Assert.Equal("<div class=\"fnord\"><pre>", stubTextWriter.Write__buffer);
+                Assert.Equal("<div class=\"fnord\"><pre>", stubTextWriter.Write__buffer.Trim());
             }
 
             [Fact]
@@ -37,7 +36,7 @@ namespace ColorCode.Formatting
 
                 formatter.WriteHeader(stubStyleSheet, stubLanguage, stubTextWriter);
 
-                Assert.Equal("<div><pre>", stubTextWriter.Write__buffer);
+                Assert.Equal("<div><pre>", stubTextWriter.Write__buffer.Trim());
             }
 
             [Fact]
@@ -190,7 +189,7 @@ namespace ColorCode.Formatting
 
                 formatter.WriteFooter(stubStyleSheet, stubLanguage, stubTextWriter);
 
-                Assert.Equal("</pre></div>", stubTextWriter.Write__buffer);
+                Assert.Equal("</pre></div>", stubTextWriter.Write__buffer.Trim());
             }
 
             [Fact]

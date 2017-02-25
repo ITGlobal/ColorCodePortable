@@ -7,7 +7,7 @@ using Xunit;
 namespace ColorCode
 {
     public class HtmlAcceptanceTests
-    {        
+    {
         [Fact]
         public void TransformWillStyleASimpleElement()
         {
@@ -226,9 +226,9 @@ namespace ColorCode
         [Fact]
         public void TransformWillStyleLargeHtmlIn1SecondOrLess()
         {
-            string appPath = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
+            string appPath = Path.GetDirectoryName(new Uri(AssemblyShim.GetExecutingAssembly().CodeBase).LocalPath);
             
-            string source = File.ReadAllText(Path.Combine(appPath, @"..\..\LegacyAcceptanceTests\large.html"));
+            string source = File.ReadAllText(Path.Combine(appPath, @"LegacyAcceptanceTests\large.html"));
             
             Stopwatch sw = new Stopwatch();
             sw.Start();
